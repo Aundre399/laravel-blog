@@ -13,7 +13,7 @@ class Post extends Model
 
     //protected $fillable = ['title', 'excerpt', 'body'];
 
-    protected $with = ['category','author'];
+    //protected $with = ['category','author'];
 
     //search filter for post controller
     public function scopefilter($query, array $filters)
@@ -47,6 +47,11 @@ class Post extends Model
 
     }
 
+    public function comments()
+    {
+        return $this-> hasmany(Comment::class);
+    }
+
     public function Category()
     {
         return $this-> belongsTo(Category::class);
@@ -58,5 +63,3 @@ class Post extends Model
         return $this-> belongsTo(user::class, 'user_id');
     }
 }
-
-

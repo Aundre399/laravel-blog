@@ -17,7 +17,8 @@
             id="email"
             placeholder="email"
             value="{{old('email')}}"
-            required>
+            required
+            autocomplete="username">
             @error('email')
 
           <p class="text-red-500 text-xs mt-1">{{ $message }}</p>
